@@ -1,5 +1,5 @@
 package pattern.Backtracking;
-public class SubsetOfString {
+public class  SubsetOfString {
     public static void findSubset(String str,String ans,int i){
         //base case
         if (i == str.length()) {

@@ -94,6 +94,34 @@ public class Add{
         size--;
         return val;
     }
+    public void removefromend(int n){
+            int sz=0;
+            Node temp =head;
+            while(temp!=null){
+                temp=temp.nxt;
+                sz++;
+        }
+            if(n==sz){    //head ko hi remove krna ho n ,like remove first
+                head=head.nxt;
+                return;
+            }
+                         //size-n starting se
+        int i =1;
+            int tofind = sz-n;
+            Node prev=head;
+            while (i<tofind){
+                prev = prev.nxt;
+                i++;
+            }
+            prev.nxt=prev.nxt.nxt;
+            return;
+    }
+
+
+
+
+
+
     public static void main(String[] args) {
      Add ad = new Add();
      ad.print();
@@ -109,10 +137,13 @@ public class Add{
      ad.print();
         System.out.println(size);
 
-     ad.removeFirst();
-         ad.print();
+//     ad.removeFirst();
+//         ad.print();
+//
+//     ad.removeLast();
+//         ad.print()   ;
 
-     ad.removeLast();
-         ad.print()   ;
+     ad.removefromend(3);
+         ad.print();
     }
 }
